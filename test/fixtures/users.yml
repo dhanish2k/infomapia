@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  name: MyString
+  image: MyString
+  token: MyString
+  token_expires: 2015-04-27 16:22:06
+  tagged_places: 
+
+two:
+  uid: MyString
+  name: MyString
+  image: MyString
+  token: MyString
+  token_expires: 2015-04-27 16:22:06
+  tagged_places: 
