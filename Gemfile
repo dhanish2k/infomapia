@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'underscore-rails'
+gem 'gmaps4rails'
+gem 'koala'
 gem 'httparty'
 gem 'figaro'
 gem 'omniauth-facebook'
