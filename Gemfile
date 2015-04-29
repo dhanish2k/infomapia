@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'hashie'
 gem 'underscore-rails'
 gem 'gmaps4rails'
 gem 'koala'

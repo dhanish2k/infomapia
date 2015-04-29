@@ -1,10 +1,12 @@
 class HomeController < ApplicationController
+   
    def front
    end
    
    
   def index
      if current_user
+        @instagram=params[:par]
         @graph = Koala::Facebook::API.new(current_user.token)
         @places = @graph.get_connections("me", "tagged_places") 
         @places.each do |place|           
@@ -23,14 +25,16 @@ class HomeController < ApplicationController
            marker.lat user.lat
            marker.lng user.lang
         end   
-        
-       
      end
-  end     
+   end     
    
    def insta
       plc=Place.find_by_name(params[:pa])
-      @instagram=HTTParty.get("https://api.instagram.com/v1/locations/search?lat=#{plc.lat}&lng=#{plc.lang}&client_id="+ENV["CLIENT_ID"])
-      puts @instagram
+      @instagram=Hashie::Mash.new HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{plc.lat}&lng=#{plc.lang}&client_id="+ENV["CLIENT_ID"])
+      @instagram.data.each do |data|
+         puts data.images.low_resolution.url
+      end
+      redirect_to :action=>'index',:par=> @instagram
    end
+end
 end

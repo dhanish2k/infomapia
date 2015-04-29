@@ -150,6 +150,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   figaro
   gmaps4rails
+  hashie
   httparty
   jbuilder (~> 2.0)
   jquery-rails
