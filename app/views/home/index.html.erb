@@ -14,4 +14,8 @@
   <div id="multi_markers" style='width: 800px; height: 400px;'></div>
 </div>
 
+<% @ps.each do |ps| %>
+<%= link_to(ps.name, :controller=> 'home',:action=> 'insta', :pa =>ps.name  ) %>
+<% end%>
+
 <%= @instagram %>
