@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'rabl'
 gem 'hashie'
 gem 'underscore-rails'
 gem 'gmaps4rails'

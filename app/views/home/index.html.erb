@@ -14,10 +14,18 @@
   <div id="multi_markers" style='width: 800px; height: 400px;'></div>
 </div>
 
-<% @ps.each do |ps| %>
-   <%= link_to(ps.name, :controller=> 'home',:action=> 'insta', :pa =>ps.name ) %>
-<% end%>
+<%if @ps%>
+   <% @ps.each do |ps| %>
+      <%= link_to(ps.name, :pa =>ps.name ) %>
+   <% end%>
+<%end%>
 
-<h1><%= "Hello" %><h1>
+<% if @instagram %>
+   <% @instagram.data.each do |data| %>
+        <%= image_tag(data.images.low_resolution.url)%>
+   <%end%>
+<%end%>
+ 
+
 
 

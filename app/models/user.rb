@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+   has_many   :places, :class_name=>'Place', :foreign_key=>"uid", :primary_key=> "uid"
 	def self.create_with_omniauth(auth)
   		create! do |user|
         	#user.provider = auth["provider"]

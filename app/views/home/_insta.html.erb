@@ -1,0 +1,6 @@
+<%= "I am partial" %>
+<% if @instagram %>
+   <% @instagram.data.each do |data| %>
+        <%= image_tag(data.images.low_resolution.url)%>
+   <%end%>
+<%end%>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-   match "/auth/:provider/callback" => "sessions#create", via: [:get]
+   
+    match '/user/:uid(.:format)' => "user#show", via: [:get]
+    match "/auth/:provider/callback" => "sessions#create", via: [:get]
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
